@@ -1,38 +1,552 @@
-.App {
+/* Genel stil ayarları */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+/* Menü konteyner stil ayarları */
+.menu-container {
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ccdacd;
+  border: 1px solid #ddd;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Menü başlığı stil ayarları */
+.menu-header {
   display: flex;
-  flex-direction: column;
+  justify-content: center; /* Ortaya hizalama */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1rem;
+  background-color: #333;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-header h1 {
+  flex-grow: 1; /* Başlığın mevcut alanda esnemesini sağlar */
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff; /* Başlık rengi beyaz, arka plan koyu olduğu için */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Butonlar için ortak stil ayarları */
+.menu-header a {
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Şef Ekranı butonu için stil ayarları */
+.menu-header .chef-button {
+  background-color: #5cb85c; /* Yeşil arka plan */
+  margin-left: 10px; /* Sağa doğru biraz boşluk */
+}
+
+.menu-header .chef-button:hover {
+  background-color: #4cae4c; /* Hover durumunda yeşilin daha koyu tonu */
+}
+.mid-header-content {
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Aligns items vertically in the center */
+  flex-grow: 1; /* Allows the div to grow and use available space */
+}
+/* Admin Girişi butonu için stil ayarları */
+.admin-link {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #FFF;
+  background-color: #007bff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.admin-link:hover {
+  background-color: #0056b3; /* Darker shade on hover for interactive feel */
+}
+.menu-header .admin-button:hover {
+  background-color: #025aa5; /* Hover durumunda mavinin daha koyu tonu */
+}
+
+.menu-header a:hover {
+  background-color: #1055AA;
+}
+
+/* Menü kategori stil ayarları */
+.menu-category {
+  display: inline-block;
+  margin: 10px;
+  width: 250px; /* İhtiyacınıza göre genişlik ayarlayabilirsiniz */
+}
+
+/* Menü görselleri stil ayarları */
+.menu-category img {
+  width: 100%; /* Resmi kapsayıcı genişliğine sığdır */
+  height: 200px; /* Sabit bir yükseklik değeri */
+  object-fit: cover; /* Resmi kapsayıcıya sığacak şekilde kırp */
+  border-bottom: 4px solid #ddd; /* Resmin altında bir çizgi */
+}
+
+/* Menü kategori başlık stil ayarları */
+.menu-category h2 {
+  background-color: #333; /* Koyu arka plan */
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 5px 0;
+  margin: 0;
+}
+
+.pizza-page {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.menu-list {
+  width: 60%;
+}
+
+.menu-item {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-item button:hover {
+  background-color: #45a049;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee; /* Liste öğelerini ayırmak için */
+}
+
+.menu-item span {
+  margin-left: auto; /* Fiyatı sağa hizalama */
+  margin-right: 20px;
+}
+
+/* OrderConfirmationPage.css */
+.order-confirmation {
+  background-color: #fff; /* beyaz arkaplan */
+  width: 80%;
+  margin: 30px auto; /* sayfanın ortasına yerleştir */
+  padding: 20px;
+  border-radius: 10px; /* kenarları yuvarlak yap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* gölge efekti */
+  font-family: 'Arial', sans-serif; /* font tipi */
+}
+
+.order-confirmation h1 {
+  color: #333; /* başlık rengi */
+  border-bottom: 2px solid #eaeaea; /* alt çizgi */
+  padding-bottom: 10px; /* alt padding */
+}
+
+.order-confirmation ul {
+  list-style-type: none; /* liste işaretlerini kaldır */
+  padding: 0;
+  margin: 20px 0;
+}
+
+.order-confirmation ul li {
+  background-color: #f9f9f9; /* liste elemanları arkaplan */
+  margin-bottom: 10px; /* liste elemanları arası boşluk */
+  padding: 10px;
+  border-radius: 5px; /* liste elemanları kenar yuvarlaklık */
+  border-left: 5px solid #5cb85c; /* sol kenar çubuğu */
+}
+
+.order-confirmation p {
+  color: #666; /* paragraf rengi */
+  line-height: 1.6; /* satır yüksekliği */
+}
+
+/* Sepet konteyner stilini güncelle */
+.cart {
+  background-color: #f9f9f9; /* Yumuşak bir arka plan rengi */
+  border-radius: 10px; /* Köşeleri yuvarlak yap */
+  padding: 20px; /* İç boşluk ekle */
+  width: 300px; /* veya ihtiyacınıza uygun bir genişlik */
+  margin: 20px; /* etrafında biraz boşluk bırak */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+  position: fixed;
+  right: 80px;
+  top: 50px;
+  overflow-y: auto; /* Dikey kaydırma çubuğu ekle */
+  max-height: 80vh;
+}
+
+/* Cart item stilini güncelle */
+.cart-item {
+  background-color: #fff; /* Öğeler için beyaz arka plan */
+  border-bottom: 1px solid #eee; /* Alt çizgiler */
+  padding: 10px; /* İç boşluk */
+  margin-bottom: 10px; /* Öğeler arasında boşluk */
+}
+
+/* Siparişi onayla buton stilini güncelle */
+.confirm-button {
+  background-color: #4CAF50; /* Yeşil arka plan */
+  color: white; /* Beyaz yazı */
+  border: none; /* Çerçeveyi kaldır */
+  padding: 15px 30px; /* İyi bir dolgu */
+  text-align: center; /* Metni ortala */
+  text-decoration: none; /* Alt çizgiyi kaldır */
+  display: block; /* Blok olarak göster */
+  margin-top: 20px; /* Üstten boşluk */
+  cursor: pointer; /* İmleç */
+  border-radius: 5px; /* Köşeleri yuvarlak yap */
+  font-size: 1rem; /* Yazı boyutu */
+  transition: background-color 0.3s; /* Renk değişim animasyonu */
+}
+
+.confirm-button:hover {
+  background-color: #45a049; /* Hover halinde renk */
+}
+
+.remove-button {
+  background-color: #f44336; /* Kırmızı arka plan */
+  color: white; /* Beyaz yazı */
+  border: none; /* Çerçeveyi kaldır */
+  padding: 5px 10px; /* Daha az dolgu */
+  margin-left: 10px; /* Solundaki öğeden boşluk */
+  cursor: pointer; /* İmleç */
+  border-radius: 3px; /* Köşeleri hafif yuvarlak yap */
+  font-size: 0.8rem; /* Daha küçük yazı boyutu */
+  transition: background-color 0.2s; /* Renk değişim animasyonu */
+}
+
+.remove-button:hover {
+  background-color: #d32f2f; /* Hover halinde daha koyu kırmızı */
+}
+
+.total-price {
+  text-align: center; /* Yazıyı yatay olarak ortalama */
+  display: block; /* Div'in varsayılan davranışını koruyarak blok seviyesinde */
+  margin: 0 auto; /* Üst ve alt marjı sıfırla ve otomatik yan marjlarla yatay olarak ortalama */
+  padding: 10px 0; /* İsteğe bağlı padding */
+}
+
+#confirm-button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Yeşil arka plan */
+  color: white; /* Beyaz yazı */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#confirm-button:hover {
+  background-color: #45a049; /* Hover durumunda daha koyu yeşil */
+}
+
+#confirmation-message {
+  color: #2c3e50; /* Koyu bir renk */
+  font-family: 'Arial', sans-serif; /* Temiz ve profesyonel bir font */
+  text-align: center; /* Yazıları ortala */
+  padding: 20px; /* İç boşluk */
+  background-color: #ecf0f1; /* Açık bir arka plan rengi */
+  border-radius: 8px; /* Köşeleri yuvarlaklaştır */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  margin-top: 20px; /* Üstten boşluk */
+}
+
+#confirmation-message p {
+  font-size: 1.2rem; /* Font boyutu büyüt */
+  margin: 10px 0; /* Paragraf arası boşluk */
+  font-weight: bold; /* Yazıyı kalınlaştır */
+  color: #27ae60; /* Canlı bir renk */
+  text-shadow: 1px 1px 2px #bdc3c7; /* Metin gölgesi */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ekranın tamamını kaplar */
+  background-color: #f3f3f3; /* Arka plan rengi */
+}
+
+/* Input alanı stillemesi */
+.login-container input {
+  padding: 10px;
+  margin-bottom: 10px; /* Giriş ve buton arasında boşluk */
+  font-size: 16px; /* Yazı boyutu */
+  border: 1px solid #ddd; /* Kenarlık stillemesi */
+  border-radius: 5px; /* Kenarları yuvarlaklaştırma */
+  width: 250px; /* Input genişliği */
+}
+
+/* Giriş yap butonu stillemesi */
+.login-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff; /* Bootstrap mavi rengi */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Butona hover efekti eklenmesi */
+.login-container button:hover {
+  background-color: #0056b3; /* Butonun üzerine gelindiğinde renk değişikliği */
+}
+
+/* Butona focus olduğunda stil değişikliği */
+.login-container input:focus,
+.login-container button:focus {
+  outline: none;
+  border-color: #66afe9; /* Bootstrap odak rengi */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Bootstrap odak gölgesi */
+}
+
+.sefEkrani {
+  margin-top: -60px;
+  color: #194d77;
+}
+
+.order-category {
+  display: inline-block;
+  margin: 10px;
+  width: 250px; /* İhtiyacınıza göre genişlik ayarlayabilirsiniz */
+}
+
+.chef-container {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+.order-category img {
+  width: 100%; /* Resmi kapsayıcı genişliğine sığdır */
+  height: 200px; /* Sabit bir yükseklik değeri */
+  object-fit: cover; /* Resmi kapsayıcıya sığacak şekilde kırp */
+  border-bottom: 4px solid #ddd; /* Resmin altında bir çizgi */
+}
+
+.order-page-container {
+  background-color: #fff5f5; /* Açık pembe arka plan rengi */
+  width: 80%; /* Konteyner genişliği */
+  margin: 20px auto; /* Otomatik marj ile sayfanın ortasına yerleştir */
+  padding: 20px; /* İç padding */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Hafif gölge efekti */
+  border-radius: 10px; /* Köşeleri yuvarlaklaştır */
+}
+
+.order-list {
+  list-style-type: none; /* List item önündeki işaretleri kaldır */
+  padding: 0;
+  margin-bottom: 20px; /* List altında boşluk bırak */
+}
+
+.order-item {
+  display: flex; /* Flexbox ile öğeleri yatay olarak hizala */
+  justify-content: space-between; /* Öğe adı ve miktar arasında boşluk bırak */
+  padding: 10px 0; /* Üst ve alt padding */
+  border-bottom: 1px solid #ccc; /* Alt çizgi */
+}
+
+.item-name {
+  font-weight: bold; /* Ürün adı için kalın font */
+}
+
+.item-quantity {
+  font-weight: bold; /* Miktar için kalın font */
+}
+
+.completion-button {
+  background-color: #4CAF50; /* Yeşil arka plan rengi */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Butonun üzerine gelindiğinde imleç değişikliği */
+  font-size: 16px;
+}
+
+.completion-button:hover {
+  background-color: #45a049; /* Butona hover yapıldığında renk değişikliği */
+}
+
+/* Başlık için CSS */
+h1 {
+  text-align: center; /* Başlığı ortala */
+  color: #333; /* Başlık rengi */
+}
+.initial-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #f7f7f7; /* Light grey background */
+}
+
+.start-button {
+  padding: 1em 2em;
+  font-size: 1.5rem; /* Larger font size for the button text */
+  color: white;
+  background-color: #007bff; /* Bootstrap primary button color */
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.start-button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+.confirmation-message {
+  color: green;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.menu-action-button {
+  padding: 10px 20px;
+  margin-right: 10px; /* Butonlar arası boşluk */
+  background-color: #007bff; /* Mavi arka plan rengi */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menu-action-button:hover {
+  background-color: #0056b3; /* Hover durumunda daha koyu mavi */
+}
+
+/* Menü işlemleri butonlarını içeren div için stil */
+.menu-actions {
+  margin-bottom: 20px; /* Menü ve butonlar arası boşluk */
+}
+/* App.css */
+
+.admin-menu-page {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+header a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+ul li {
+  background: #f8f9fa;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+ul li:hover {
+  background: #e9ecef;
+}
+
+.menu-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-action-button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-action-button:hover {
+  background: #218838;
+}
+
+.menu-action-button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  header a,
+  .menu-action-button {
+    width: 100%;
+    margin-bottom: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu-actions {
+    flex-direction: column;
   }
 }
