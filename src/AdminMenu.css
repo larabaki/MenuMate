@@ -152,4 +152,19 @@ header .chef-button:hover {
   .menu-item:hover {
     background: #e9ecef;
   }
-  
+
+  .menu-categories .menu-action-addButton{
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #0bb811;
+    color: #333;
+    border: none;
+    border-radius: 20px; /* Rounded borders for the buttons */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    float: right;
+    
+  }

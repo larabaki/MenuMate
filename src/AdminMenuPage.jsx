@@ -33,9 +33,8 @@ const AdminMenuPage = () => {
     <div className="admin-menu-page">
       <header>
         <Link to="/chef-screen" className="chef-button">Şef Ekranı</Link>
-        {/* Other header content */}
       </header>
-      <h1>"Restorant" MenuMate</h1>
+      <h1>"Restoran" MenuMate</h1>
       <div className="menu-categories">
         {categories.map((category) => (
           <button 
@@ -43,16 +42,17 @@ const AdminMenuPage = () => {
             onClick={() => handleClickCategory(category.id)}
             className={`category-button ${activeCategory === category.id ? 'active' : ''}`}
           >
+            
             {category.name}
           </button>
         ))}
-      </div>
+       <button onClick={addItem} className="menu-action-addButton">Ekle</button>
+      </div> 
       <div className="menu-items">
         {activeCategory && categories.find(c => c.id === activeCategory).items.map((item) => (
           <div key={item} className="menu-item">
             {item}
             <div className="menu-actions">
-        <button onClick={addItem} className="menu-action-button">Ekle</button>
         <button onClick={deleteItem} className="menu-action-button">Sil</button>
         <button onClick={editItem} className="menu-action-button">Düzenle</button>
       </div>

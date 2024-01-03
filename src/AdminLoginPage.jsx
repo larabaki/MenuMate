@@ -24,8 +24,8 @@ function AdminLoginPage() {
   return (
     <div className="admin-login-container">
       <form className="admin-login-form" onSubmit={handleLogin}>
-        <h2>"Restorant" MenuMate Admin Girişine Hoşgeldiniz.</h2>
-        <h4 htmlFor="restaurantName">Restorantınıza ait admin bilgilerini giriniz.</h4>
+        <h2>"Restoran" MenuMate Admin Girişine Hoşgeldiniz.</h2>
+        <h4 htmlFor="restaurantName">Restoranınıza ait admin bilgilerini giriniz.</h4>
       
         
         <label htmlFor="username">Admin Kullanıcı Adı:</label>
@@ -42,7 +42,7 @@ function AdminLoginPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Giriş Yap</button> {/* Buton metnini "Giriş Yap" yerine "Kaydet" olarak değiştirdik */}
+        <button type="submit">Giriş Yap</button> 
       </form>
     </div>
   );
