@@ -117,8 +117,8 @@ header .chef-button:hover {
     }
   }
   .menu-categories button {
-    padding: 10px 20px;
-    margin: 0 5px;
+    padding: 10px 10px;
+    margin: 10px 5px;
     background-color: #e7e7e7;
     color: #333;
     border: none;

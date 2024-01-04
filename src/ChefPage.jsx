@@ -23,7 +23,6 @@ const ChefPage = () => {
     }
   };
   const handleTableClick = (tableNumber) => {
-    // Masa numarasına göre OrderPage bileşenine yönlendir
     navigate(`/order/${tableNumber}`);
   };
 
