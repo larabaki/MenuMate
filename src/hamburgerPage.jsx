@@ -15,7 +15,6 @@ const HamburgerPage = () => {
     {id:24, name: 'Biber Burger', price: '$110' },
     {id:25, name: 'Tereyağlı Hamburger', price: '$140' },
     {id:26, name: 'Spesiyal Burgerimiz', price: '$180' },
-
   ];
 
   return (

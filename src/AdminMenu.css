@@ -168,3 +168,86 @@ header .chef-button:hover {
     float: right;
     
   }
+
+  /* Butonların genel stilini ayarlar */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Aktif buton için stil */
+.button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Pasif butonlar için stil */
+.button.inactive {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Butona tıkladığınızda uygulanan hover efekti */
+.button:hover {
+  background-color: #5e5e5e;
+  color: white;
+}
+
+/* Ekle butonu için özel stil */
+.button.add {
+  background-color: #0f9d58;
+  color: white;
+}
+
+/* Sil ve Düzenle butonları için özel stil */
+.button.delete,
+.button.edit {
+  background-color: #d23f31;
+  color: white;
+}
+/* Butonların genel stilini ayarlar */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Aktif buton için stil */
+.button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Pasif butonlar için stil */
+.button.inactive {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Butona tıkladığınızda uygulanan hover efekti */
+.button:hover {
+  background-color: #5e5e5e;
+  color: white;
+}
+
+/* Ekle butonu için özel stil */
+.button.add {
+  background-color: #0f9d58;
+  color: white;
+}
+
+/* Sil ve Düzenle butonları için özel stil */
+.button.delete,
+.button.edit {
+  background-color: #d23f31;
+  color: white;
+}

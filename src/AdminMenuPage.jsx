@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom';
 import './AdminMenu.css'
 
 const categories = [
-  { id: 'burgers', name: 'Hamburgers', items: ['Boca Burger', 'Biber Burger'] },
-  { id: 'salads', name: 'Salads', items: ['Greek Salad', 'Caesar Salad'] },
-  // ... other categories
-];
+    { id: 'hamburger', name: 'Hamburgers', items: ['Classic Burger', 'Cheese Burger', 'Veggie Burger', 'Bufalo Burger','Çizburger'] },
+    { id: 'salads', name: 'Salads', items: ['Sezar Salata', 'Kabak Salatası', 'Dereotlu Cevizli Salata','Fettuş Salatası'] },
+    { id: 'chicken', name: 'Chicken', items: ['Grilled Chicken', 'Chicken Wrap', 'Chicken Caesar Salad'] },
+    { id: 'pizza', name: 'Pizza', items: ['Pepperoni Pizza', 'Margherita Pizza', 'Hawaiian Pizza'] },
+    { id: 'maindishes', name: 'Main Dishes', items: ['Pazı Curry', 'Bal Kabağı Sinkonta', 'Tavuk Piccata','Fried Rice','Patates Püreli Karides','Hindistan Cevizli Sütlü Kuru Fasulye'] },
+    { id: 'pasta', name: 'Pasta', items: ['Spaghetti Bolognese', 'Penne Arrabiata', 'Fettuccine Alfredo'] },
+    { id: 'desserts', name: 'Desserts', items: ['Cheesecake', 'Brownie', 'Ice Cream'] },
+    { id: 'seafood', name: 'Seafood', items: ['Karides Tava', 'Karides Güveç', 'Veloute','Ahtapot Izgara','Deniz Tarağı'] },
+    { id: 'pide', name: 'Pide & Lahmacun', items: ['Kuşbaşılı Pide', 'Lahmacun', 'Pastırmalı Pide','Sucuklu Pide','Kaşarlı Pide','Kıymalı Pide'] },
+    { id: 'breakfast', name: 'Breakfast', items: ['Full English Breakfast', 'Pancakes', 'Omelette'] },
+    { id: 'drinks', name: 'Drinks', items: ['Sprite', 'Ayran', 'Şeftali Meyve Suyu','Karışık Meyve Suyu','Ice-Tea Mango','Ice-Tea Şeftali','Ice-Tea Limon'] }
+  ];
 
 const AdminMenuPage = () => {
   const [activeCategory, setActiveCategory] = useState(null);

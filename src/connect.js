@@ -3,8 +3,8 @@ const { Pool } = require('pg');
 const pool = new Pool({
   user: 'postgres', // Kullanıcı adınız
   host: 'localhost', // Host adresi
-  database: 'Menumate', // Veritabanı adı
-  password: '27925272Lelu', // Şifreniz
+  database: 'MenuMate', // Veritabanı adı
+  password: '123123', // Şifreniz
   port: 5432, // PostgreSQL portu (varsayılan 5432)
 });
 
